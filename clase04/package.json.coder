@@ -1,0 +1,20 @@
+{
+  "name": "clase04",
+  "version": "1.0.0",
+  "description": "esto es un mini proyecto de prueba",
+  "main": "fechayhora.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/santiaguf/coderhouse-backend"
+  },
+  "keywords": [
+    "js",
+    "nodejs",
+    "fs"
+  ],
+  "author": "CoderHouse",
+  "license": "ISC"
+}
