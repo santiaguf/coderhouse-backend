@@ -1,0 +1,24 @@
+{
+  "contenidoStr": "{\n  \"name\": \"clase04\",\n  \"version\": \"1.0.0\",\n  \"description\": \"esto es un mini proyecto de prueba\",\n  \"main\": \"fechayhora.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"github.com/santiaguf/coderhouse-backend\"\n  },\n  \"keywords\": [\n    \"js\",\n    \"nodejs\",\n    \"fs\"\n  ],\n  \"author\": \"Santiago Bernal\",\n  \"license\": \"ISC\"\n}\n",
+  "contenidoObj": {
+    "name": "clase04",
+    "version": "1.0.0",
+    "description": "esto es un mini proyecto de prueba",
+    "main": "fechayhora.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "github.com/santiaguf/coderhouse-backend"
+    },
+    "keywords": [
+      "js",
+      "nodejs",
+      "fs"
+    ],
+    "author": "Santiago Bernal",
+    "license": "ISC"
+  },
+  "size": 406
+}
