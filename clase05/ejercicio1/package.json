@@ -10,5 +10,8 @@
     "nodejs"
   ],
   "author": "Santiago Bernal",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "localtunnel": "^2.0.2"
+  }
 }
