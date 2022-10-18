@@ -1,3 +1,5 @@
+const chalk = require('chalk');
+
 let productos = [
   {id: 1, nombre: "Escuadra", precio: 323.45},
   { id:2, nombre:'Calculadora', precio:234.56 },
@@ -36,3 +38,5 @@ let info = {
 }
 
 console.log(info)
+
+console.log(chalk.blue(getNombres()))
