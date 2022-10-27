@@ -3,6 +3,10 @@ const { Router } = express
 
 const app = express();
 
+app.use(express.static(__dirname + '/public'));
+
+app.use(express.urlencoded({ extended: true }));
+
 // mascotas
 const routerPets = new Router();
 
@@ -16,6 +20,8 @@ routerPets.get('/', (req, res) => {
 
 routerPets.post('/', (req, res) => {
   const { body } = req;
+  console.log('el body: ')
+  console.log(body);
   pets.push(body);
   res.send(body);
 });

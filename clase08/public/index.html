@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario ingreso a la clinica pokemon</title>
+</head>
+<body>
+
+  <h1>Bienvenid@s al centro pokemon</h1>
+
+  <h2>Ingreso Mascotas</h2>
+  <form action="/mascotas" method="post" name="mascotas">
+    Nombre: <input type="text" name="nombre" required><br>
+    Raza: <input type="text" name="raza" required><br>
+    edad: <input type="number" name="edad" required><br>
+    <button>Enviar</button>
+  </form>
+
+  <h2>Ingreso personas</h2>
+  <form action="/personas" method="post" name="personas">
+    Nombre: <input type="text" name="nombre" required><br>
+    Apellido: <input type="text" name="apellido" required><br>
+    edad: <input type="number" name="edad" required><br>
+    <button>Enviar</button>
+</body>
+</html>
