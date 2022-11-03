@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <%- include('./partials/header.ejs') -%>
+</head>
+
+<body>
+  <h1 style="color: blue;">
+    <%-titulo%>
+  </h1>
+
+  <span>
+    <%=min+" "%>
+  </span>
+  <meter value=<%=nivel%> min=<%=min%> max=<%=max%> style=" width:25%;height:25px;"></meter>
+  <span>
+    <%=max+" "%>
+  </span>
+
+</body>
+
+</html>
