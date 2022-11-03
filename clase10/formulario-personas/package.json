@@ -1,0 +1,19 @@
+{
+  "name": "formulario-personas",
+  "version": "1.0.0",
+  "description": "formulario personas con ejs",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ejs",
+    "express"
+  ],
+  "author": "Santiago Bernal",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
