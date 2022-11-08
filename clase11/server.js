@@ -8,13 +8,16 @@ const httpServer = new HttpServer(app);
 
 const io = new IOServer(httpServer);
 
+const mensajes = [];
+
 app.use(express.static(__dirname + '/public'));
 
 io.on('connection', socket => {
   console.log('Nuevo cliente conectado!');
 
   socket.on('mensaje', data => {
-    io.sockets.emit('mensajes', data);
+    mensajes.push({socketId: socket.id, mensaje: data, fecha: new Date()});
+    io.sockets.emit('mensajes', mensajes);
   })
 });
 

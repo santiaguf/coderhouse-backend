@@ -1,10 +1,14 @@
 const socket = io.connect();
 
-const inputBox = document.querySelector('input')
-inputBox.addEventListener('input', () => {
+const inputBox = document.querySelector('input');
+const myButton = document.querySelector('button');
+
+myButton.addEventListener('click', () => {
   socket.emit('mensaje', inputBox.value);
 });
 
-socket.on('mensajes', data => {
-  document.querySelector('p').innerHTML = data;
+socket.on('mensajes', msjs => {
+  const mensajesHtml = msjs.map(msj => `Fecha: ${msj.fecha} - SocketId: ${msj.socketId} -> mensaje: ${msj.mensaje}`).join('<br>')
+
+  document.querySelector('p').innerHTML = mensajesHtml;
 })
