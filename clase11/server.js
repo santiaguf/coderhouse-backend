@@ -12,6 +12,10 @@ app.use(express.static(__dirname + '/public'));
 
 io.on('connection', socket => {
   console.log('Nuevo cliente conectado!');
+
+  socket.on('mensaje', data => {
+    io.sockets.emit('mensajes', data);
+  })
 });
 
 const port = 8080;
