@@ -8,7 +8,11 @@ const httpServer = new HttpServer(app);
 
 const io = new IOServer(httpServer);
 
-const mensajes = [];
+const mensajes = [
+  { nombre: "juan", mensaje: "Hola, qué tal?" },
+  { nombre: "pedro", mensaje: "¿Bien bien y tú?" },
+  { nombre: "ana", mensaje: "Genial!"}
+];
 
 app.use(express.static(__dirname + '/public'));
 
