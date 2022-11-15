@@ -1,0 +1,17 @@
+{
+  "name": "demo-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "transform": "./node_modules/.bin/tsc index.ts -w",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.8.4"
+  }
+}
