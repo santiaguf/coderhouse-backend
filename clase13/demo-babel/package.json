@@ -1,0 +1,19 @@
+{
+  "name": "demo-babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node color.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "conv": "./node_modules/.bin/babel color.js -o colorjs5.js -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2"
+  }
+}
