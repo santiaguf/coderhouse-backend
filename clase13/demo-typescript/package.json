@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "transform": "./node_modules/.bin/tsc index.ts -w",
+    "color": "./node_modules/.bin/tsc color.ts -w",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
