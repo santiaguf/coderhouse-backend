@@ -1,0 +1,1 @@
+setTimeout((()=>{console.log("estamos en el primer tiempo del partido, vamos a ganar!")}),1e3),setTimeout((()=>{console.log("estamos en el entre tiempo")}),2e3),setTimeout((()=>{console.log("estamos en el segundo tiempo del partido")}),3e3);
