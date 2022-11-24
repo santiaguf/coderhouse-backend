@@ -1,2 +1,4 @@
 node_modules/
 uploads/
+.env
+clase16/.env
