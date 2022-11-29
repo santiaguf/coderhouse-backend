@@ -1,0 +1,33 @@
+mongo
+
+show dbs
+
+use sistema
+
+db
+
+db.usuarios.insert({nombre: 'Juan', edad: 23})
+
+db.usuarios.find()
+
+show collections
+
+db.usuarios.insert({nombre: 'Cecilia', edad: 27})
+
+db.usuarios.insert({nombre: 'Pedro', edad: 29})
+
+db.usuarios.insert({nombre: 'Ana', edad: 24})
+
+db.usuarios.find()
+
+db.productos.insert({nombre: 'prod1', precio: 12.34, stock: 25})
+
+db.productos.insert({nombre: 'prod2', precio: 34.56, stock: 27})
+
+db.productos.insert({nombre: 'prod3', precio: 89.12, stock: 43})
+
+db.productos.insert({nombre: 'prod4', precio: 43.65, stock: 76})
+
+show collections
+
+db.productos.find()

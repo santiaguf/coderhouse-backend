@@ -1,0 +1,11 @@
+mongo
+
+use mibase
+
+db
+
+db.usuarios.insert([{nombre: 'Juan', apellido: 'Perez', edad: 23, email: 'jp@gmail.com'},{nombre: 'Pedro', apellido: 'Mei', edad: 21, email: 'pm@gmail.com'},{nombre: 'Juana', apellido: 'Suarez', edad: 25, email: 'js@gmail.com'}])
+
+show collections
+
+db.usuarios.find()
