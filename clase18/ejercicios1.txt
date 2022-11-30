@@ -1,0 +1,19 @@
+use empresa
+
+db.createCollection('clientes')
+
+db.clientes.insert({ nombre: 'juan', edad: 23})
+
+db.clientes.insertMany([{ nombre: 'Cecilia', edad: 27}, { nombre: 'Pedro', edad: 29}, { nombre: 'Ana', edad: 24}])
+
+db.articulos.insertMany([{ nombre: 'Prod1', precio: 12.34, stock: 25}, { nombre: 'prod2', precio: 34.56, stock: 27}, { nombre: 'prod3', precio: 89.12, stock: 43}, { nombre: 'prod4', precio: 43.65, stock: 76}])
+
+show collections
+
+db.clientes.find()
+
+db.articulos.find()
+
+new Date(ObjectId("6387eb0458aa7c6e00b61e1f").getTimestamp()).toLocaleString()
+
+new Date(ObjectId("6387eb0458aa7c6e00b61e1f").getTimestamp())
