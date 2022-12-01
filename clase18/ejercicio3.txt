@@ -1,0 +1,10 @@
+> use admin
+
+> db
+
+> db.createUser({user: 'encargado', pwd: 'qwerty123', roles: [{ role: 'readWrite', db: 'empresa'}]})
+
+> exit
+
+// este comando es desde la terminal
+$ mongo -u 'encargado' -p
