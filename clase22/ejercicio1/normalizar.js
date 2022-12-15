@@ -1,5 +1,4 @@
-const { json } = require('express');
-const { normalize, schema} = require('normalizr');
+const { normalize, schema, denormalize} = require('normalizr');
 
 const empresa = {
   id: "1000",
@@ -100,3 +99,8 @@ print(empresaNormalizada);
 
 console.log('longitud original:' + JSON.stringify(empresa).length);
 console.log('longitud normalizada:' + JSON.stringify(empresaNormalizada).length);
+
+console.log('-----------   Desnormalizado:');
+
+const empresaDesnormalizada = denormalize(empresaNormalizada.result, organigrama, empresaNormalizada.entities);
+print(empresaDesnormalizada);
