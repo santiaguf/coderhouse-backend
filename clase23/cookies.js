@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser';
 
 const app = express();
 
+// recuerden que el secret, se debe manejar a traves de variables de entorno
 app.use(cookieParser('coder19dic'));
 
 app.use(json());

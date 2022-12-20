@@ -3,6 +3,7 @@ import session from 'express-session';
 
 const app = express();
 
+// recuerden que el secret, se debe manejar a traves de variables de entorno
 app.use(session({
   secret: 'coder19dic',
   resave: false,
