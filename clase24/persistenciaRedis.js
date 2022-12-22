@@ -2,12 +2,22 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
-const fileStore = require('session-file-store')(session);
+const redis = require('redis');
+
+const client = redis.createClient();
+const connectRedis = require('connect-redis');
+
+const redisStore = connectRedis(session);
 
 const app = express();
 app.use(cookieParser());
 app.use(session({
-    store: new fileStore({ path: './sesiones', ttl:300, retries: 0}),
+    store: new redisStore({
+      host: 'localhost',
+      port: 6379,
+      client: client,
+      ttl: 300
+    }),
     secret: 'coder19dic',
     resave: false,
     saveUninitialized: false

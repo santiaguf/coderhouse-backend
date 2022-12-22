@@ -1,13 +1,26 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const redisStore = require('connect-redis')(session);
 
-const fileStore = require('session-file-store')(session);
+const redis = require('redis');
+
+const client = redis.createClient(process.env.DB_PORT, process.env.DB_HOST);
+
+client.auth(process.env.DB_PASS, (err) => {
+  if (err) throw err;
+});
 
 const app = express();
 app.use(cookieParser());
 app.use(session({
-    store: new fileStore({ path: './sesiones', ttl:300, retries: 0}),
+    store: new redisStore({
+      client: client,
+      ttl: 300
+    }),
     secret: 'coder19dic',
     resave: false,
     saveUninitialized: false
