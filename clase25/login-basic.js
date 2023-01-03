@@ -32,17 +32,16 @@ app.get('/register', (req, res) => {
 });
 
 app.post('/register', (req, res) => {
-  const { nombre, password, direccion } = req.body;
-  const usuario = usuarios.find(u => u.nombre === nombre);
+  const { username, password, direccion } = req.body;
+  const usuario = usuarios.find(u => u.username === username);
 
   if (usuario) {
     return res.render('register-error');
   }
 
-  usuarios.push({ nombre, password, direccion })
+  usuarios.push({ username, password, direccion })
   res.redirect('/login')
 
-  console.log(usuarios);
 });
 
 app.get('/login', (req, res) => {
@@ -50,23 +49,23 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  const { nombre, password } = req.body;
-  const usuario = usuarios.find(u => u.nombre === nombre && u.password === password);
+  const { username, password } = req.body;
+  const usuario = usuarios.find(u => u.username === username && u.password === password);
 
   if (!usuario) {
     return res.render('login-error');
   }
 
-  req.session.nombre = nombre;
+  req.session.username = username;
   req.session.contador = 0;
   res.redirect('/datos')
 });
 
 app.get('/datos', (req, res) => {
-  if (req.session.nombre) {
+  if (req.session.username) {
     req.session.contador++;
     res.render('datos', {
-      datos: usuarios.find(u => u.nombre === req.session.nombre),
+      datos: usuarios.find(u => u.username === req.session.username),
       contador: req.session.contador
     });
   } else {
@@ -81,7 +80,7 @@ app.get('/logout', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  if (req.session.nombre) {
+  if (req.session.username) {
     res.redirect('/datos')
   } else {
     res.redirect('/login')
