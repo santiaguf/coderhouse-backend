@@ -1,8 +1,8 @@
 const parseArgs = require('minimist');
 
 /* como usar:
-node desafio2.js 1 2 3 -m dev -p 8080 -d
-node desafio2.js 1 2
+node ejercicio2.js 1 2 3 -m dev -p 8080 -d
+node ejercicio2.js 1 2
 */
 
 const options = {
