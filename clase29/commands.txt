@@ -1,0 +1,15 @@
+forever start server-fork.js 8081
+forever start server-fork.js 8082
+forever start server-fork.js 8083
+forever list
+forever stopall
+
+
+pm2 start server-fork.js --name="prueba1" --watch -- 8081
+pm2 start server-fork.js --name="prueba2" --watch -i max -- 8082
+pm2 delete Server2
+pm2 delete prueba2
+pm2 --help
+pm2 monit
+pm2 describe 0
+pm2 describe prueba1
