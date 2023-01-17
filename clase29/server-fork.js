@@ -9,6 +9,6 @@ app.get('/', (req, res) => {
 });
 
 const server = app.listen(PORT, () => {
-  console.log(`Servidor express escuchando en http://localhost:${PORT} - PID ${process.pid}}`);
+  console.log(`Servidor express escuchando en http://localhost:${PORT} - PID ${process.pid}`);
 });
 server.on('error', error => console.log(`Error en servidor ${error}`));
