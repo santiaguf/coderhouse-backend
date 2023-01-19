@@ -1,0 +1,1 @@
+console.log('recurso stático desde Nginx');
