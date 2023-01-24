@@ -1,6 +1,7 @@
 const express = require('express');
 //const logger = require('./loggers/log4js');
-const logger = require('./loggers/winston');
+//const logger = require('./loggers/winston');
+const logger = require('./loggers/pino');
 
 const app = express();
 
