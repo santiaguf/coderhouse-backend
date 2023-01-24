@@ -3,8 +3,8 @@ const winston = require('winston');
 function buildProdLogger() {
   const prodLogger = winston.createLogger({
     transports: [
-      new winston.transports.File({ filename: '../log/debug-winston.log', level: 'debug' }),
-      new winston.transports.File({ filename: '../log/errores-winston.log', level: 'error' })
+      new winston.transports.File({ filename: 'log/debug-winston.log', level: 'debug' }),
+      new winston.transports.File({ filename: 'log/errores-winston.log', level: 'error' })
     ]
   })
   return prodLogger;

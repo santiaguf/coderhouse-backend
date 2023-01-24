@@ -6,3 +6,9 @@ clase16/.env
 clase20/firebase/db/serviceAccountKey.json
 
 sesiones/
+
+clase31/log/
+
+*.log
+clase31/log/errores.log
+clase31/log/debug.log

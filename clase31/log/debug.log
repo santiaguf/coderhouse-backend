@@ -1,0 +1,3 @@
+[2023-01-23T20:03:38.340] [ERROR] prod - No se recibieron los parámetros n1 y n2
+[2023-01-23T20:03:44.431] [INFO] prod - Se recibieron los parámetros n1: 8 y n2: 40
+[2023-01-23T20:03:56.513] [WARN] prod - Se intentó acceder a / con método GET, no está implementado

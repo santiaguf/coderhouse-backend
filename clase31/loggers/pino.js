@@ -1,7 +1,7 @@
 const pino = require('pino');
 
 function buildProdLogger() {
-  const prodLogger = pino('../log/debug-pino.log');
+  const prodLogger = pino('log/debug-pino.log');
   prodLogger.level = 'debug';
   return prodLogger;
 }

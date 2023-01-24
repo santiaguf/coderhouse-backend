@@ -3,8 +3,8 @@ const log4js = require('log4js');
 log4js.configure({
   appenders: {
     consola: { type: 'console' },
-    archivoErrores: { type: 'file', filename: '../log/errores.log' },
-    archivoDebug: { type: 'file', filename: '../log/debug.log' },
+    archivoErrores: { type: 'file', filename: 'log/errores.log' },
+    archivoDebug: { type: 'file', filename: 'log/debug.log' },
     loggerConsola: { type: 'logLevelFilter', appender: 'consola', level: 'info' },
     loggerArchivoErrores: { type: 'logLevelFilter', appender: 'archivoErrores', level: 'error' },
     loggerArchivoDebug: { type: 'logLevelFilter', appender: 'archivoDebug', level: 'debug' },
