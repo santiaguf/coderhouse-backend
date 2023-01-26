@@ -12,3 +12,7 @@ clase31/log/
 *.log
 clase31/log/errores.log
 clase31/log/debug.log
+
+isolate-*
+artillery_slow*
+prof_slow*
