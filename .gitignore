@@ -14,5 +14,6 @@ clase31/log/errores.log
 clase31/log/debug.log
 
 isolate-*
-artillery_slow*
+artillery_fork*
+artillery_cluster*
 prof_slow*
