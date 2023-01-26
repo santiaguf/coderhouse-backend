@@ -4,11 +4,23 @@ const cluster = require('cluster');
 const os = require('os');
 
 /*
+// comparación desde node
 node server.js FORK
 artillery quick -c 50 -n 50 "http://localhost:8080/random-debug" > artillery_fork.txt
 
 node server.js CLUSTER
 artillery quick -c 50 -n 50 "http://localhost:8080/random-debug" > artillery_cluster.txt
+
+
+// comparación desde 0x
+
+0x server.js
+autocannon -d 20 -c 500 "http://localhost:8080/random-debug"
+detenemos el server de 0x
+
+0x server.js
+autocannon -d 20 -c 500 "http://localhost:8080/random-nodebug"
+detenemos el server de 0x
 */
 
 const MODO_CLUSTER = process.argv[2] === 'CLUSTER';
