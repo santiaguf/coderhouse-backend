@@ -1,6 +1,22 @@
 const express = require('express');
 const app = express();
 
+/*
+node --prof aleatorios.js
+node --prof-process isolate-[XXXXXXX].log > prof_slow.txt
+
+node --inspect aleatorios.js
+// este comando de abajo se ejecuta en el navegador google chrome
+chrome://inspect
+
+
+TESTS:
+artillery quick -c 50 -n 50 "http://localhost:8080/random-debug" > artillery_slow.txt
+artillery quick -c 50 -n 50 "http://localhost:8080/random-nodebug" > artillery_slow_2.txt
+
+*/
+
+
 function calcularRandoms(min, max, cant) {
   let randoms = [];
 
