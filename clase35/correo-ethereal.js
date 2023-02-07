@@ -27,8 +27,8 @@ function createSendMailEthereal() {
 const sendMail = createSendMailEthereal();
 
 const emailAccount = 'plataforma@coderhouse.com';
-const emailSubject = 'Bienvenida a CH';
-const emailText = 'Hola, te damos bienvenida a la plataforma Coderhouse :)';
+const emailSubject = process.argv[2] || 'Bienvenida a CH';
+const emailText = process.argv[3] || 'Hola, te damos bienvenida a la plataforma Coderhouse :)';
 const attachmentsPath = '';
 const emailAttachments = [];
 
