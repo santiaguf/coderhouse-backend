@@ -41,7 +41,7 @@ function createSendMailGmail() {
 //const sendMail = createSendMailEthereal();
 const sendMail = createSendMailGmail();
 
-const emailAccount = process.argv[2] 'mail@example.com';
+const emailAccount = process.argv[2] || 'mail@example.com';
 const emailSubject = process.argv[3] || 'Bienvenida a CH';
 const emailText = process.argv[4] || 'Hola, te damos bienvenida a la plataforma Coderhouse :)';
 const attachmentsPath = '';
