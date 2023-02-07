@@ -3,6 +3,9 @@ dotenv.config();
 
 import nodemailer from 'nodemailer';
 
+// node correo.js micorreo@gmail.com "prueba" "hola mundo"
+
+
 function createSendMail(mailConfig) {
   const transporter = nodemailer.createTransport(mailConfig);
 
@@ -24,13 +27,29 @@ function createSendMailEthereal() {
   })
 }
 
-const sendMail = createSendMailEthereal();
+function createSendMailGmail() {
+  return createSendMail({
+    host: process.env.GMAIL_HOST,
+    port: process.env.GMAIL_PORT,
+    auth: {
+      user: process.env.GMAIL_USERNAME,
+      pass: process.env.GMAIL_PASSWORD,
+    }
+  })
+}
 
-const emailAccount = 'plataforma@coderhouse.com';
-const emailSubject = process.argv[2] || 'Bienvenida a CH';
-const emailText = process.argv[3] || 'Hola, te damos bienvenida a la plataforma Coderhouse :)';
+//const sendMail = createSendMailEthereal();
+const sendMail = createSendMailGmail();
+
+const emailAccount = process.argv[2] 'mail@example.com';
+const emailSubject = process.argv[3] || 'Bienvenida a CH';
+const emailText = process.argv[4] || 'Hola, te damos bienvenida a la plataforma Coderhouse :)';
 const attachmentsPath = '';
-const emailAttachments = [];
+const emailAttachments = [
+  {
+    path: new URL('./foto.png', import.meta.url).pathname
+  }
+];
 
 if(attachmentsPath) {
   emailAttachments.push({ path: attachmentsPath })
