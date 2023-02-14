@@ -1,0 +1,13 @@
+{
+  "name": "sb-calculadora",
+  "version": "1.0.0",
+  "description": "app de calculadora para testear subida a npmjs",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Santiago Bernal",
+  "license": "MIT"
+}
