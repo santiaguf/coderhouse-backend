@@ -1,6 +1,6 @@
 {
   "name": "sb-calculadora",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "app de calculadora para testear subida a npmjs",
   "type": "module",
   "main": "index.js",
