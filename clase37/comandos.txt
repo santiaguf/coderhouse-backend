@@ -1,0 +1,6 @@
+npm install -g yarn
+yarn --version
+yarn init -y
+yarn add express
+yarn add nodemon --dev
+yarn start
