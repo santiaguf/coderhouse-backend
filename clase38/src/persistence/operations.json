@@ -1,0 +1,12 @@
+[
+  {
+    "params": [
+      4,
+      5
+    ],
+    "result": 9,
+    "operation": "suma",
+    "tiemstamp": 1676510775120,
+    "id": 1
+  }
+]

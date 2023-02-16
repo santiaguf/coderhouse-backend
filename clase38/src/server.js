@@ -1,5 +1,6 @@
 import express from "express";
 import operationsRoutes from "./routes/operations.routes.js";
+import authRoutes from "./routes/auth.routes.js";
 
 const app = express();
 
@@ -9,6 +10,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/operations", operationsRoutes);
+app.use("/", authRoutes);
 
 const PORT = process.env.PORT || 8080;
 
