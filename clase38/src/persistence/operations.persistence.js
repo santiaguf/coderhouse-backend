@@ -1,5 +1,5 @@
-import MemoryContainer from "./container/memory.container";
-import FileContainer from "./container/file.container";
+import MemoryContainer from "./container/memory.container.js";
+import FileContainer from "./container/file.container.js";
 
 const containerMode = process.env.CONTAINER_MODE || 'fs';
 let container;
