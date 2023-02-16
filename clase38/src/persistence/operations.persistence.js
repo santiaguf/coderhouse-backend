@@ -1,10 +1,46 @@
-const operations = [];
+import MemoryContainer from "./container/memory.container";
+import FileContainer from "./container/file.container";
 
-const save = (obj) => operations.push(obj);
+const containerMode = process.env.CONTAINER_MODE || 'fs';
+let container;
 
-const getAll = () =>  operations;
+switch (containerMode) {
+    case 'fs':
+        container = new FileContainer('./src/persistence/operations.json');
+        break;
+    default:
+        container = new MemoryContainer();
+}
+
+async function save(obj) {
+    return await container.save(obj);
+}
+
+async function getAll() {
+    return await container.listAll();
+}
+
+async function getById(id) {
+    return await container.list(id);
+}
+
+async function update(obj) {
+    return await container.update(obj);
+}
+
+async function deleteById(id) {
+    return await container.delete(id);
+}
+
+async function deleteAll() {
+    return await container.deleteAll();
+}
 
 export {
     save,
-    getAll
+    getAll,
+    getById,
+    update,
+    deleteById,
+    deleteAll
 };
