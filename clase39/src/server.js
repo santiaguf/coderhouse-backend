@@ -1,5 +1,5 @@
 import express from "express";
-import habdlebars from "express-handlebars";
+import handlebars from "express-handlebars";
 import htmlWire from "./routes/htmlWire.routes.js";
 
 import path from "path";
@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 
 app.engine(
     "hbs",
-    habdlebars.engine({
+    handlebars.engine({
         extname: "hbs",
         defaultLayout: "index.hbs",
     })
