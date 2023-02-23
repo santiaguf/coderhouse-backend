@@ -1,0 +1,44 @@
+<div>
+    <form action="/html-onwire" method="post">
+    <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre">
+
+    </div>
+    <div>
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" id="apellido">
+    </div>
+    <div>
+        <label for="dni">DNI</label>
+        <input type="text" name="dni" id="dni">
+    </div>
+    <button type="submit">Enviar</button>
+    </form>
+
+
+    {{#if users.length}}
+        <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre:</th>
+                    <th>Apellido:</th>
+                    <th>DNI:</th>
+                </tr>
+            </thead>
+
+                {{#each users}}
+                    <tr>
+                        <td>{{ this.nombre }}</td>
+                        <td>{{ this.apellido }}</td>
+                        <td>{{ this.dni }}</td>
+                    </tr>
+                {{/each }}
+
+        </table>
+        </div>
+        {{else }}
+            <p>No hay usuarios guardados actualmente</p>
+    {{/if }}
+</div>
