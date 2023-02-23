@@ -2,6 +2,7 @@ import express from "express";
 import handlebars from "express-handlebars";
 import htmlWire from "./routes/htmlWire.routes.js";
 import dataWire from "./routes/dataWire.routes.js";
+import singletonRoutes from "./routes/singleton.routes.js";
 
 import path from "path";
 import { fileURLToPath } from "url";
@@ -25,6 +26,7 @@ app.set("view engine", "hbs");
 
 app.use("/html-onwire", htmlWire);
 app.use("/data-onwire", dataWire);
+app.use("/datos", singletonRoutes);
 
 app.use("/", (req, res) => {
     res.redirect("/html-onwire");
