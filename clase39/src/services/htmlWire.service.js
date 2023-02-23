@@ -1,4 +1,4 @@
-import usersModel from '../model/users.model.js';
+import usersModel from '../models/users.model.js';
 
 export async function addUser(user) {
     await usersModel.addUser(user);
