@@ -15,13 +15,13 @@ console.log(await personaDao.getAll())
 
 console.log('----------------------------------------')
 console.log('2) Incorporar una persona')
-const persona1 = { id: IdGenerator.next(), nombre: 'Juan', apellido: 'Perez', DNI: '3055777' }
+const persona1 = { id: IdGenerator.next(), nombre: 'Juan', apellido: 'Perez', dni: '3055777' }
 console.log(await personaDao.save(persona1))
 
 
 console.log('----------------------------------------')
 console.log('3) Incorporar otra persona')
-const persona2 = { id: IdGenerator.next(), nombre: 'Ana', apellido: 'Gomez', DNI: '3055778' }
+const persona2 = { id: IdGenerator.next(), nombre: 'Ana', apellido: 'Gomez', dni: '3055778' }
 console.log(await personaDao.save(persona2))
 
 console.log('----------------------------------------')
@@ -34,7 +34,7 @@ console.log(await personaDao.getById(persona2.id))
 
 console.log('----------------------------------------')
 console.log('6) Actualizar una persona por id')
-console.log(await personaDao.updateById(persona2.id, { nombre: 'Ana Maria', apellido: 'Gómez', DNI: '3055778' }))
+console.log(await personaDao.updateById(persona2.id, { nombre: 'Ana Maria', apellido: 'Gómez', dni: '3055778' }))
 
 console.log('----------------------------------------')
 console.log('7) borrar una persona por id')

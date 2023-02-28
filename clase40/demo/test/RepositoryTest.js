@@ -8,46 +8,46 @@ const IdGenerator = {
     next() { return this.id++ }
 }
 
-const personaDao = new PersonasRepo();
+const personaRepo = new PersonasRepo();
 
 console.log('----------------------------------------')
 console.log('1) Obtener todas las personas')
-show(await personaDao.getAll())
+show(await personaRepo.getAll())
 
 console.log('----------------------------------------')
 console.log('2) Incorporar una persona')
-const persona1 = { id: IdGenerator.next(), nombre: 'Juan', apellido: 'Perez', DNI: '3055777' }
-show(await personaDao.add(persona1))
+const persona1 = new Persona({ id: IdGenerator.next(), nombre: 'Juan', apellido: 'Perez', dni: '3055777' })
+await personaRepo.add(persona1)
 
 
 console.log('----------------------------------------')
 console.log('3) Incorporar otra persona')
-const persona2 = { id: IdGenerator.next(), nombre: 'Ana', apellido: 'Gomez', DNI: '3055778' }
-show(await personaDao.add(persona2))
+const persona2 = new Persona({ id: IdGenerator.next(), nombre: 'Ana', apellido: 'Gomez', dni: '3055778' })
+await personaRepo.add(persona2)
 
 console.log('----------------------------------------')
 console.log('4) Obtener todas las personas')
-show(await personaDao.getAll())
+show(await personaRepo.getAll())
 
 console.log('----------------------------------------')
 console.log('5) Obtener una persona por id')
-show(await personaDao.getById(persona2.id))
+show(await personaRepo.getById(persona2.id))
 
 console.log('----------------------------------------')
 console.log('7) borrar una persona por id')
-show(await personaDao.removeById(persona2.id))
+show(await personaRepo.removeById(persona2.id))
 
 console.log('----------------------------------------')
 console.log('8) Obtener todas las personas')
-show(await personaDao.getAll())
+show(await personaRepo.getAll())
 
 console.log('----------------------------------------')
 console.log('9) borrar todas las personas')
-await personaDao.deleteAll()
+await personaRepo.removeAll()
 
 console.log('----------------------------------------')
 console.log('10) Obtener todas las personas')
-show(await personaDao.getAll())
+show(await personaRepo.getAll())
 
 function show(data) {
     if (Array.isArray(data)) {

@@ -25,7 +25,7 @@ export default class PersonasDaoFile {
         console.log('Inicializando el DAO de personas en archivo');
     }
 
-    disconnect() {
+    async disconnect() {
         console.log('Finalizando el DAO de personas en archivo')
     }
 
