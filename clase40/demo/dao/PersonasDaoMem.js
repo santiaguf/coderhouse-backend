@@ -3,6 +3,10 @@ export default class PersonasDaoMem {
         this.personas = []
     }
 
+    init() {
+        console.log('Inicializando el DAO de personas en memoria');
+    }
+
     #getIndex(id) {
         return this.personas.findIndex(p => p.id === id)
     }
