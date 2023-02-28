@@ -3,21 +3,44 @@ import { asDto } from '../dto/PersonaDTO.js'
 
 export default class PersonasDaoFile {
 
+    #ready = false
+
     constructor(ruta) {
         this.ruta = ruta
         this.personas = []
     }
 
-    init() {
+    async init() {
+
+        try {
+            await fs.promises.readFile(this.ruta, 'utf-8')
+            this.#ready = true
+            console.log('personas dao en archivo -> listo')
+        } catch (error) {
+            await fs.promises.writeFile(this.ruta, '[]')
+            this.#ready = true
+            console.log('personas dao en archivo -> listo')
+        }
+
         console.log('Inicializando el DAO de personas en archivo');
     }
 
+    disconnect() {
+        console.log('Finalizando el DAO de personas en archivo')
+    }
+
+    #checkReady() {
+        if (!this.#ready) throw new Error('INTERNAL_ERROR: dao no conectado!')
+    }
+
     async #leerArchivo() {
+        this.#checkReady()
         const texto = await fs.promises.readFile(this.ruta, 'utf-8')
         this.personas = JSON.parse(texto)
     }
 
     async #escribirArchivo() {
+        this.#checkReady()
         const texto = JSON.stringify(this.personas, null, 2)
         await fs.promises.writeFile(this.ruta, texto)
     }
