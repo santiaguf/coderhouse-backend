@@ -20,3 +20,5 @@ class Palabras {
         if(error) throw new Error(error.details[0].message);
     }
 }
+
+export default Palabras;
