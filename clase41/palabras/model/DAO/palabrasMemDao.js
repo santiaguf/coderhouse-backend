@@ -1,7 +1,7 @@
 import palabraDTO from "../DTO/palabraDto.js";
 import PalabrasBaseDAO from "./palabrasBaseDao.js";
 
-class PalabrasDAOMem extends PalabrasBaseDAO {
+class PalabrasMemDAO extends PalabrasBaseDAO {
     constructor() {
         super();
         this.palabras = [];
@@ -34,4 +34,4 @@ class PalabrasDAOMem extends PalabrasBaseDAO {
     }
 }
 
-export default PalabrasDAOMem;
+export default PalabrasMemDAO;
