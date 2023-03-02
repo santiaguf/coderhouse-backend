@@ -6,8 +6,8 @@ class PalabrasApi {
         this.PalabrasDAO = PalabrasFactoryDao.get();
     }
 
-    async obtenerPalabras(id) {
-        let palabras = await this.palabrasDAO.obtenerPalabras(id);
+    async obtenerPalabras() {
+        let palabras = await this.palabrasDAO.obtenerPalabras();
         return palabras.map(p => p.palabra).join(' ');
     }
 
