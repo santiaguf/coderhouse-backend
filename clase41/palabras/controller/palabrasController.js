@@ -10,7 +10,7 @@ class PalabrasController {
             let id = req.params.id;
             let palabras = await this.palabrasApi.obtenerPalabras();
 
-            res.json(palabras);
+            res.send(palabras);
         }
         catch (error) {
             console.log(`error en obtenerPalabras: ${error.message}`);

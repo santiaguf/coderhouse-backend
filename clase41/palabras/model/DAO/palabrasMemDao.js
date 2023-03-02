@@ -20,7 +20,7 @@ class PalabrasMemDAO extends PalabrasBaseDAO {
     guardarPalabra = async palabra => {
         try {
             let _id = this.getNext_Id(this.palabras);
-            let timestamp = new Date.now();
+            let timestamp = Date.now();
             let palabraGuardada = palabraDTO(palabra, _id, timestamp);
             this.palabras.push(palabraGuardada);
 

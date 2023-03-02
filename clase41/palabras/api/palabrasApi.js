@@ -1,13 +1,13 @@
-import PalabrasFactoryDao from '../model/DAO/palabrasFactoryDao.js'
+import PalabrasFactoryDAO from '../model/DAO/palabrasFactoryDao.js'
 import Palabras from '../model/palabrasModel.js'
 
 class PalabrasApi {
     constructor() {
-        this.PalabrasDAO = PalabrasFactoryDao.get();
+        this.PalabrasDAO = PalabrasFactoryDAO.get();
     }
 
     async obtenerPalabras() {
-        let palabras = await this.palabrasDAO.obtenerPalabras();
+        let palabras = await this.PalabrasDAO.obtenerPalabras();
         return palabras.map(p => p.palabra).join(' ');
     }
 

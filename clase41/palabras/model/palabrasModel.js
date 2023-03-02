@@ -11,9 +11,9 @@ class Palabras {
         return true;
     }
 
-    static validar(palabra) {
+    static validar(palabra, requerido) {
         const palabraSchema = Joi.object({
-            palabra:  requerido? Joi.string().required() : Joi.string()
+            palabra: requerido? Joi.string().required() : Joi.string()
         })
 
         const { error } = palabraSchema.validate(palabra);
