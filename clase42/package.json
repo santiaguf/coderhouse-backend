@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node randomNumbers/serverNumeros.js",
+    "test": "mocha randomNumbers/serverNumeros.test.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,7 @@
   "dependencies": {
     "axios": "^0.21.4",
     "express": "^4.18.2",
-    "got": "^11.8.2"
+    "got": "^11.8.2",
+    "mocha": "^9.1.3"
   }
 }
