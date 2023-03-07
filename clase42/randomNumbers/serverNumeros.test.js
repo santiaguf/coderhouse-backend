@@ -2,8 +2,10 @@ import { strictEqual, deepStrictEqual } from 'assert';
 
 import axios from 'axios';
 
-const sendNumber = number => axios.post('http://localhost:8080/ingreso', { number });
-const getNumbers = () => axios('http://localhost:8080/egreso');
+const url = 'http://localhost:8080/';
+
+const sendNumber = number => axios.post(url +'ingreso', { number });
+const getNumbers = () => axios(url +'egreso');
 
 describe('comprobando que el servidor fuincione correctamente', function () {
     
