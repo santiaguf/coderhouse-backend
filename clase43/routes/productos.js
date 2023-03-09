@@ -5,10 +5,10 @@ const debug = require('debug')('productos:productos');
 function makeRandomId() {
     const nums = [];
 
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 4; i++) {
         nums.push(Math.floor(Math.random() * 10));
     }
-    return `${Date.now()}-${nums.join('')}`;
+    return `${Date.now()}${nums.join('')}`;
 }
 
 const productos = [];
