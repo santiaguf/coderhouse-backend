@@ -1,0 +1,18 @@
+# NewProduct
+components:
+  requestBodies:
+    NewProduct:
+      type: object
+      required:
+        - nombre
+        - precio
+      properties:
+        nombre:
+          type: string
+          description: el nombre del producto.
+        precio:
+          type: number
+          description: el precio del producto.
+      example:
+        nombre: camisa bayern munich
+        precio: 110

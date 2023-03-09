@@ -1,0 +1,24 @@
+# Product
+
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - id
+        - nombre
+        - precio
+      properties:
+        id:
+          type: string
+          description: el id autogenerador para el producto
+        nombre:
+          type: string
+          description: el nombre del producto
+        precio:
+          type: number
+          description: el precio del producto
+      example:
+        id: 1678320784285-58417919
+        nombre: camisa bayern munich
+        precio: 110
