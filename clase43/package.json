@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www.js",
     "debug": "DEBUG=productos:* npm start",
-    "dev": "nodemon ./bin/www.js"
+    "dev": "nodemon ./bin/www.js",
+    "api": "nodemon ./bin/www.js -e js,json,yaml"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -13,6 +14,8 @@
     "express": "~4.16.1",
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
   }
 }
