@@ -1,4 +1,4 @@
-import express  from "express";
+import express from "express";
 import { graphqlHTTP } from "express-graphql";
 import { buildSchema } from "graphql";
 import crypto from "crypto";
@@ -11,15 +11,18 @@ const recordatorioSchema = buildSchema(`
     }
     type Recordatorio {
         id: ID!
-        titulo: String
-        descripcion: String
+        titulo: String,
+        descripcion: String,
+        leido: Boolean,
         timestamp: Float
     }
     type Query {
         getRecordatorios: [Recordatorio],
     }
     type Mutation {
-        createRecordatorio(datos: RecordatorioInput): Recordatorio
+        createRecordatorio(datos: RecordatorioInput): Recordatorio,
+        markAsReadRecordatorio(id: ID!): Recordatorio,
+        deleteReadRecordatorios: [Recordatorio],
     }
 `);
 
@@ -29,21 +32,45 @@ class Recordatorio {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.timestamp = timestamp;
+        this.leido = false;
     }
 }
 
-const Recordatorios =[];
+const recordatorios =[];
 
 function getRecordatorios() {
-    return Recordatorios;
+    return recordatorios;
 }
 
 function createRecordatorio({ datos }) {
     const id = crypto.randomBytes(10).toString("hex");
     const nuevoRecordatorio = new Recordatorio(id, datos);
 
-    Recordatorios.push(nuevoRecordatorio);
+    recordatorios.push(nuevoRecordatorio);
     return nuevoRecordatorio;
+}
+
+function markAsReadRecordatorio({ id }) {
+    const recordatorio = recordatorios.find((r) => r.id === id);
+
+    if (!recordatorio) {
+        throw new Error("No existe el recordatorio");
+    }
+    recordatorio.leido = true;
+    return recordatorio;
+}
+
+function deleteReadRecordatorios() {
+    let i = 0;
+    const deleteReadRecordatorios = [];
+    while (i < recordatorios.length) {
+        if (recordatorios[i].leido) {
+            deleteReadRecordatorios.push(recordatorios.splice(i, 1)[0]);
+        } else {
+            i++;
+        }
+    }
+    return deleteReadRecordatorios;
 }
 
 const app = express();
@@ -56,8 +83,10 @@ app.use('/graphql', graphqlHTTP({
     rootValue: {
         getRecordatorios,
         createRecordatorio,
+        markAsReadRecordatorio,
+        deleteReadRecordatorios,
     },
-    graphiql: false,
+    graphiql: true,
 }));
 
 
