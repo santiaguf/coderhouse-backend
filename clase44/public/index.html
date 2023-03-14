@@ -8,7 +8,7 @@
 </head>
 <body>
     <label>consulta</label><br>
-    <textarea name="query" id="query" cols="35" rows="50"></textarea><br>
+    <textarea name="query" id="query" cols="35" rows="40"></textarea><br>
     <button id="btnSendQuery">enviar consulta a GraphQL</button>
 
     <p id="response"></p>
@@ -17,50 +17,49 @@
         const inputQuery = document.getElementById('query');
         const btnSendQuery = document.getElementById('btnSendQuery');
 
-        btnSendQuery.addEventListener('click', () => {
-            async function clickHandler() {
-                const query =getQuery();
-                const data = await sendQuery(query);
-                render(data);
-            }
+        btnSendQuery.addEventListener('click', clickHandler)
 
-            function getQuery() {
+        async function clickHandler() {
+            const query =getQuery();
+            const data = await sendQuery(query);
+            render(data);
+        }
 
-                const wholeQuery = inputQuery.value;
+        function getQuery() {
 
-                const indexStart = inputQuery.selectionStart;
-                const indexEnd = inputQuery.selectionEnd;
-                const selection = wholeQuery.substring(indexStart, indexEnd);
+            const wholeQuery = inputQuery.value;
 
-                return selection || wholeQuery;
-            }
+            const indexStart = inputQuery.selectionStart;
+            const indexEnd = inputQuery.selectionEnd;
+            const selection = wholeQuery.substring(indexStart, indexEnd);
 
-            async function sendQuery(query) {
-                try {
-                    const response = await fetch('/graphql', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            query
-                        })
+            return selection || wholeQuery;
+        }
+
+        async function sendQuery(query) {
+            try {
+                const response = await fetch('/graphql', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        query
                     })
-                    const data = await response.json();
-                    return data;
-                } catch (error) {
-                    return error;
-                };
+                })
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                return error;
+            };
 
+        }
 
-            }
-
-            function render(data) {
-                const html = JSON.stringify(data, null, 2);
-                response.innerHTML = `<pre>${html}</pre>`;
-            }
-        })
+        function render(data) {
+            const html = JSON.stringify(data, null, 2);
+            response.innerHTML = `<pre>${html}</pre>`;
+        }
 
     </script>
 
