@@ -18,3 +18,12 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
+Route.get('/sin-controller', async ({request, view} ) => {
+    const {palabras} = request.get()
+    console.log('sin controller: ', palabras)
+    let arrayPalabras = palabras.split(' ')
+    let arrayPalabrasInvertidas = [...arrayPalabras].reverse()
+
+    return view.render('palabras', {titulo: 'Sin controller', arrayPalabras, arrayPalabrasInvertidas})
+
+})
