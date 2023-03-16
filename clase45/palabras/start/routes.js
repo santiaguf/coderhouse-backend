@@ -27,3 +27,5 @@ Route.get('/sin-controller', async ({request, view} ) => {
     return view.render('palabras', {titulo: 'Sin controller', arrayPalabras, arrayPalabrasInvertidas})
 
 })
+
+Route.get('/con-controller', 'PalabraController.index')
