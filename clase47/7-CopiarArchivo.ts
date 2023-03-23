@@ -1,0 +1,1 @@
+await Deno.copyFile('archivo.txt', 'archivo2.txt');

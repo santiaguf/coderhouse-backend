@@ -1,0 +1,1 @@
+await Deno.writeTextFile('archivo.txt', 'Hola mundo!');
