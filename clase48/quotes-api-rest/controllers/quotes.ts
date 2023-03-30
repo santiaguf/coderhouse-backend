@@ -1,4 +1,4 @@
-import { MongoClient } from "../deps.ts";
+import { MongoClient, ObjectId } from "../deps.ts";
 import { Quote } from "../types.ts";
 
 const URI = "mongodb://127.0.0.1:27017";
@@ -51,8 +51,8 @@ const getQuote = async ({
   params: { id: string };
   response: any;
 }) => {
-  console.log(params.id)
-  const quote = await quotes.findOne({ _id: params.id });
+  let objId = new ObjectId(params.id);
+  const quote = await quotes.findOne({ _id: objId });
 
   if (quote) {
     response.status = 200;
@@ -117,11 +117,12 @@ const updateQuote = async ({
   try {
     const body = await request.body();
     const inputQuote = await body.value;
+    let objId = new ObjectId(params.id);
     await quotes.updateOne(
-      { quoteID: params.id },
+      { _id: objId },
       { $set: { quote: inputQuote.quote, author: inputQuote.author } }
     );
-    const updatedQuote = await quotes.findOne({ _id: params.id });
+    const updatedQuote = await quotes.findOne({ _id: objId });
     response.status = 200;
     response.body = {
       success: true,
@@ -146,7 +147,8 @@ const deleteQuote = async ({
   response: any;
 }) => {
   try {
-    await quotes.deleteOne({ _id: params.id });
+    let objId = new ObjectId(params.id);
+    await quotes.deleteOne({ _id: objId });
     response.status = 201;
     response.body = {
       success: true,
